@@ -1,0 +1,17 @@
+name: First workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  container-job:
+    runs-on: ubuntu-latest
+    container: unityofdisaster/node-with-angular
+    steps:
+      - name: check node version
+        run: node -v
+      - name: check angular version
+        run: ng --version
