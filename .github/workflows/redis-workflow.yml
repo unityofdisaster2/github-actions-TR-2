@@ -23,4 +23,4 @@ jobs:
       - name: insert value on redis cache
         run: redis-cli SET 97340108-0a71-41c2-a04c-8f05cd025559 "raymundo"
       - name: retrieve value from redis cache
-      - run: redis-cli GET 97340108-0a71-41c2-a04c-8f05cd025559
+        run: redis-cli GET 97340108-0a71-41c2-a04c-8f05cd025559
