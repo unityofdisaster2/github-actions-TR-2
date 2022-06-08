@@ -1,4 +1,4 @@
-name: Container job
+name: redis workflow
 
 on:
   push:
