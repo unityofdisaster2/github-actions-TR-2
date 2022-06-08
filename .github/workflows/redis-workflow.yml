@@ -19,8 +19,8 @@ jobs:
     
     steps:
       - name: test redis connection
-        run: redis-cli -h 172.17.0.2 -p 6379 ping
+        run: redis-cli -h redis -p 6379 ping
       - name: insert value on redis cache
-        run: redis-cli -h 172.17.0.2 -p 6379 SET 97340108-0a71-41c2-a04c-8f05cd025559 "raymundo"
+        run: redis-cli -h redis -p 6379 SET 97340108-0a71-41c2-a04c-8f05cd025559 "raymundo"
       - name: retrieve value from redis cache
-        run: redis-cli -h 172.17.0.2 -p 6379 GET 97340108-0a71-41c2-a04c-8f05cd025559
+        run: redis-cli -h redis -p 6379 GET 97340108-0a71-41c2-a04c-8f05cd025559
