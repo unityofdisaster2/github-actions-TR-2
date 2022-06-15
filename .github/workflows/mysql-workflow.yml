@@ -17,4 +17,4 @@ jobs:
           - 3306:3306
     steps:
       - name: show values from demo table
-        run: mysql --host=mariadb_service --port=3306 -u miusuario0 -pmipassword0 -Bse "use demo; SELECT * FROM Categories"
+        run: mysql -u miusuario0 -pmipassword0 -Bse "use demo; SELECT * FROM Categories"
