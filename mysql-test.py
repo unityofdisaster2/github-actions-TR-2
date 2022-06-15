@@ -5,14 +5,13 @@ conn = mariadb.connect(
     user="root",
     password="mipassword0",
     host="mariadb_service",
-    database="demo")
+    database="nation")
 cur = conn.cursor() 
 
-some_name = "Georgi" 
-cur.execute("SELECT CategoryID,CategoryName, Description FROM Categories") 
+cur.execute("SELECT name, area, national_day FROM countries") 
 
-for CategoryID, CategoryName, Description in cur: 
-    print(f"CategoryID: {CategoryID}, Last name: {Description}")
+for name, area, national_day in cur: 
+    print(f"name: {name}, area: {area}, national day: {national_day}")
     
 # #insert information 
 # try: 
