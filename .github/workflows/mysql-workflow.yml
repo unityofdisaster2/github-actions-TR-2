@@ -9,12 +9,14 @@ on:
 jobs:
   mariadb_test:
     runs-on: ubuntu-latest
-    container: mariadb
+    container: python
     services:
       mariadb_service:
         image: unityofdisaster/custom-mariadb
         ports: 
           - 3306:3306
     steps:
-      - name: show values from demo table
-        run: mysql -u miusuario0 -pmipassword0 -Bse "use demo; SELECT * FROM Categories"
+      - name: install mariadb dependency
+        run: pip3 install mariadb
+      - name: execute python script
+        run: python mysql-test.py
