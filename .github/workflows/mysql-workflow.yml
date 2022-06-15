@@ -1,0 +1,20 @@
+name: mariadb workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  redis_test:
+    runs-on: ubuntu-latest
+    container: mariadb
+    services:
+      redis:
+        image: custom-mariadb
+        ports: 
+          - 3306:3306
+    steps:
+      - name: show values from demo table
+        run: mysql -h localhost:3306 -u miusuario0 -pmipassword0 -Bse "use demo; SELECT * FROM Categories"
