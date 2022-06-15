@@ -2,7 +2,7 @@
 import mariadb 
 
 conn = mariadb.connect(
-    user="miusuario0",
+    user="root",
     password="mipassword0",
     host="mariadb_service",
     database="demo")
