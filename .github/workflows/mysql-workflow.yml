@@ -12,7 +12,7 @@ jobs:
     container: mariadb
     services:
       redis:
-        image: custom-mariadb
+        image: unityofdisaster/custom-mariadb
         ports: 
           - 3306:3306
     steps:
