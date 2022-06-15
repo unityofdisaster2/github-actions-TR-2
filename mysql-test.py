@@ -6,20 +6,16 @@ conn = mariadb.connect(
     password="mipassword0",
     host="mariadb_service",
     database="nation")
-cur = conn.cursor() 
 
-cur.execute("SELECT name, area, national_day FROM countries") 
+try: 
+	cur = conn.cursor() 
 
-for name, area, national_day in cur: 
-    print(f"name: {name}, area: {area}, national day: {national_day}")
-    
-# #insert information 
-# try: 
-#     cur.execute("INSERT INTO employees (first_name,last_name) VALUES (?, ?)", ("Maria","DB")) 
-# except mariadb.Error as e: 
-#     print(f"Error: {e}")
+	cur.execute("SELECT name, area FROM countries LIMIT 10") 
 
-# conn.commit() 
-# print(f"Last Inserted ID: {cur.lastrowid}")
-    
+	for name, area in cur: 
+		print(f"name: {name}, area: {area}")
+except Exception:
+	print('something went wrong')
+	print(Exception)
+
 conn.close()
