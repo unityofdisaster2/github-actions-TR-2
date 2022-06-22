@@ -1,0 +1,23 @@
+name: environment variable workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test_env:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: mostrar variables de github
+        run: |
+          echo ${{ github.actor }}
+          echo ${{ github.base_ref }}
+          echo ${{ github.ref }}
+          echo ${{ github.event_name }}
+      - name: 'mostrar secrets'
+        run: |
+          echo ${{ secrets.JENKINS_USER }}
+          echo ${{ secrets.JENKINS_PASSWORD }}
