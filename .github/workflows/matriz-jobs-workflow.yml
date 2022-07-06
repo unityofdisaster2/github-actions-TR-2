@@ -1,4 +1,4 @@
-name: First workflow
+name: Matriz de jobs
 
 on:
   push:
